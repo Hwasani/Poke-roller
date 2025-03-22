@@ -41,7 +41,7 @@ class MainWindow(QMainWindow):
     def get_new_pokemon(self):
         poke_id = random.randint(1,134)
         sprite = pb.SpriteResource('pokemon', poke_id, front_default = True)
-        self.filename = '/images/%d.png' % poke_id
+        self.filename = './images/%d.png' % poke_id
         with open(self.filename, 'wb') as f:
             f.write(requests.get(sprite.url).content)
         
